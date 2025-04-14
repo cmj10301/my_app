@@ -10,6 +10,7 @@ from tf_agents.agents.dqn import dqn_agent
 from tf_agents.utils import common
 from tf_agents.replay_buffers import tf_uniform_replay_buffer
 from tf_agents.trajectories import trajectory
+from tf_agents.trajectories import policy_step
 import json
 
 # ------------------ 환경 정의 ------------------
@@ -72,7 +73,7 @@ class TwentyQuestionsTFEnv(py_environment.PyEnvironment):
 
 
 # ------------------ 데이터셋 불러오기 ------------------
-with open('ai/dataset/final_full_corrected_animal_dataset.json', 'r', encoding='utf-8') as f:
+with open('ai/dataset/final_dataset_with_family_and_size.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
     animals = data["animals"]
 
@@ -144,18 +145,20 @@ for i in range(num_iterations):
 print("기본 학습 완료!")
 
 # ------------------ 인터랙티브 게임 및 추가 학습 ------------------
+# --- 인터랙티브 게임 및 추가 학습 ---
 def interactive_game():
     """
     사용자가 질문에 답변하면서, 일정 조건(예: 5개 이상의 질문)이 충족되면
-    각 동물과의 답변 일치도를 계산하여, 신뢰도가 90% 이상이면 자동 추측 후보를 제시합니다.
-    - 후보가 3개 이하이면 후보 목록을 보여주고 번호를 입력받아 선택합니다.
-    - 후보가 3개 초과면, 첫 번째 후보에 대해 y/n 확인 후,
-      y이면 추측 액션을 실행하고, n이면 질문을 계속 진행합니다.
+    각 동물과의 답변 일치도를 계산하여 신뢰도가 90% 이상일 경우 자동 추측 후보를 제시합니다.
+    후보가 3개 이하일 때만 후보 목록을 표시하여 번호로 선택하게 하고,
+    후보가 3개 초과면 아무 후보도 선택하지 않고 질문을 이어갑니다.
     """
     print("----- 20개 질문에 답해주세요 -----")
-    # train_env.reset()는 TFPyEnvironment를 통해 배치 관측값 (1,20)을 반환합니다.
+    # TFPyEnvironment를 사용하므로, train_env.reset()은 내부에서 배치 차원을 추가하여 (1, num_questions)를 반환합니다.
     state = train_env.reset()  
     asked = set()
+
+    guess_animal = None  # 초기화
 
     while True:
         available = set(range(train_py_env.num_questions)) - asked
@@ -163,12 +166,14 @@ def interactive_game():
             print("모든 질문을 마쳤습니다.")
             break
 
+        # 에이전트 정책으로 질문 인덱스 결정 (state는 (1, num_questions))
         action_step = agent.policy.action(state)
         q_index = int(np.squeeze(action_step.action))
         if q_index not in available:
             q_index = random.choice(list(available))
         asked.add(q_index)
         
+        # 질문 텍스트 출력 (여기서는 첫 번째 동물의 질문 목록을 사용)
         question_text = train_py_env.dataset[0]['questions'][q_index]['question']
         print(f"질문 {q_index+1}: {question_text}")
         
@@ -182,11 +187,11 @@ def interactive_game():
             print("입력 오류 발생, -1 (미답변)으로 처리합니다.")
             user_answer = -1
         
-        # 환경 상태 업데이트
+        # 환경 상태 업데이트 (history 업데이트; 이 history는 unbatched, shape=(num_questions,))
         train_py_env.history[q_index] = user_answer
         train_py_env.asked_questions.add(q_index)
         
-        # 상태 업데이트: train_py_env.history는 (20,), 배치 차원 추가하여 (1,20)
+        # 상태 업데이트: unbatched history를 np.array([history])로 만들어 (1, num_questions)
         state = ts.transition(np.array([train_py_env.history], dtype=np.float32),
                               reward=-1.0,
                               discount=1.0)
@@ -206,34 +211,32 @@ def interactive_game():
             max_score = max(scores.values())
             candidates = [name for name, score in scores.items() if score == max_score]
             confidence = max_score / answered_count if answered_count > 0 else 0
-            if confidence >= 0.9:
+            # 만약 신뢰도가 90% 이상이고 후보 수가 3개 이하이면 후보 목록 표시
+            if confidence >= 0.9 and len(candidates) <= 3:
                 print("AI가 충분히 확신합니다.")
-                if len(candidates) <= 3:
-                    print("자동 추측 후보 (동점):")
-                    for idx, candidate in enumerate(candidates):
-                        print(f"{idx+1}. {candidate}")
-                    choice = input("이 중에서 올바른 동물을 선택하세요 (번호 입력): ").strip()
-                    try:
-                        choice = int(choice)
-                        if 1 <= choice <= len(candidates):
-                            guess_animal = candidates[choice - 1]
-                            break
-                        else:
-                            print("잘못된 선택입니다. 계속 질문을 진행합니다.")
-                    except Exception:
-                        print("입력 오류. 계속 질문을 진행합니다.")
-                else:
-                    guess_animal = candidates[0]
-                    confirm = input(f"자동 추측 후보: {guess_animal} (신뢰도: {confidence*100:.1f}%). 맞습니까? (y/n): ").strip().lower()
-                    if confirm == 'y':
-                        break
+                print("자동 추측 후보 (동점):")
+                for idx, candidate in enumerate(candidates):
+                    print(f"{idx+1}. {candidate}")
+                choice = input("이 중에서 올바른 동물을 선택하세요 (번호 입력): ").strip()
+                try:
+                    choice = int(choice)
+                    if 1 <= choice <= len(candidates):
+                        guess_animal = candidates[choice - 1]
+                        break  # 추측 액션 실행
                     else:
-                        print("계속 질문을 진행합니다.")
-    
+                        print("잘못된 선택입니다. 계속 질문을 진행합니다.")
+                except Exception:
+                    print("입력 오류. 계속 질문을 진행합니다.")
+            elif confidence >= 0.9:
+                # 후보가 3개 초과이면 후보 목록은 표시하지 않고, 질문 계속 진행
+                print("AI의 신뢰도가 충분하지만, 후보 수가 많아 자동 추측 후보를 확정하지 않습니다.")
+                # continue 질문 진행
+        
     print("----- 질문 종료 -----")
     print("입력한 답변 벡터:", train_py_env.history)
     
-    if 'guess_animal' not in locals():
+    # 만약 자동 추측 후보가 확정되지 않았다면, 사용자가 직접 입력
+    if guess_animal is None:
         guess_animal = input("추측할 동물명을 입력하세요: ").strip()
     
     final_time_step = train_py_env.guess(guess_animal)
@@ -241,16 +244,21 @@ def interactive_game():
     print("실제 정답 동물:", train_py_env.target['name'])
     
     # --- 사용자 경험을 Replay Buffer에 단 한 번 추가한 후 추가 학습 수행 ---
-    final_state = np.array(train_py_env.history, dtype=np.float32)  # shape: (20,)
-    user_time_step = ts.restart(np.array([final_state], dtype=np.float32))  # (1,20)
-    user_action_step = agent.policy.action(user_time_step)
-    user_next_time_step = ts.termination(np.array([final_state], dtype=np.float32), reward=float(final_time_step.reward))
-    user_traj = trajectory.from_transition(user_time_step, user_action_step, user_next_time_step)
+    # final_state: unbatched, shape (num_questions,) — 새 데이터셋 기준 예: (23,)
+    final_state = np.array(train_py_env.history, dtype=np.float32)
+    # 여기서 배치 차원이 없어야 하므로 final_state 그대로 사용합니다.
+    user_time_step = ts.restart(final_state)  # TimeStep with observation shape: (num_questions,)
+    # 대신, 에이전트의 정책 함수 호출 대신 더미 액션을 생성합니다.
+    dummy_action = np.array(0, dtype=np.int32)  # action spec: scalar
+    dummy_action_step = policy_step.PolicyStep(action=dummy_action, state=())
+    user_next_time_step = ts.termination(final_state, reward=float(final_time_step.reward))
+    user_traj = trajectory.from_transition(user_time_step, dummy_action_step, user_next_time_step)
     replay_buffer.add_batch(user_traj)
     experience, _ = next(iterator)
     loss_info = agent.train(experience)
     ckpt_path = checkpoint.save(os.path.join(checkpoint_dir, "ckpt"))
     print(f"추가 학습 후 checkpoint 저장됨: {ckpt_path}")
+
 
 # --- 인터랙티브 게임 실행 ---
 interactive_game()
