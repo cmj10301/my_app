@@ -1,0 +1,8604 @@
+{
+  "animals": [
+    {
+      "name": "사자",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 1
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "호랑이",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "코끼리",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "기린",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "개",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": -1
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": -1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "고양이",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": -1
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": -1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "돼지",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "소",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "name": "말",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "양",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "name": "토끼",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "늑대",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": -1
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": -1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "여우",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": -1
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": -1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "곰",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": -1
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": -1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "낙타",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "하마",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "코뿔소",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "name": "치타",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "레서판다",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "판다",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "고라니",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "수달",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "너구리",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "두더지",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": -1
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": -1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "청설모",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "침팬지",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "오랑우탄",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "고릴라",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "사슴",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": -1
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": -1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "name": "염소",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "name": "닭",
+      "category": "동물 (조류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "독수리",
+      "category": "동물 (조류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": -1
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": -1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "참새",
+      "category": "동물 (조류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "까치",
+      "category": "동물 (조류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "부엉이",
+      "category": "동물 (조류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "앵무새",
+      "category": "동물 (조류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "타조",
+      "category": "동물 (조류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "펭귄",
+      "category": "동물 (조류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 1
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 1
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "황제펭귄",
+      "category": "동물 (조류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 1
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 1
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "백조",
+      "category": "동물 (조류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "오리",
+      "category": "동물 (조류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "청둥오리",
+      "category": "동물 (조류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "거위",
+      "category": "동물 (조류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "상어",
+      "category": "동물 (어류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 1
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "돌고래",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 1
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "고래",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 1
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "문어",
+      "category": "동물 (연체)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 1
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "오징어",
+      "category": "동물 (연체)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 1
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "대왕오징어",
+      "category": "동물 (연체)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 1
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "쭈꾸미",
+      "category": "동물 (연체)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 1
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "게",
+      "category": "동물 (절지동물)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "꽃게",
+      "category": "동물 (절지동물)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "가재",
+      "category": "동물 (절지동물)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "바닷가재",
+      "category": "동물 (절지동물)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 1
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "해파리",
+      "category": "동물 (무척추)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 1
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "불가사리",
+      "category": "동물 (무척추)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 1
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "성게",
+      "category": "동물 (무척추)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 1
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "멸치",
+      "category": "동물 (어류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 1
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "정어리",
+      "category": "동물 (어류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 1
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "광어",
+      "category": "동물 (어류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 1
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "가자미",
+      "category": "동물 (어류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 1
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "아귀",
+      "category": "동물 (어류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 1
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "미꾸라지",
+      "category": "동물 (어류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "붕어",
+      "category": "동물 (어류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "잉어",
+      "category": "동물 (어류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "메기",
+      "category": "동물 (포유류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 0
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "가물치",
+      "category": "동물 (어류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "장어",
+      "category": "동물 (어류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "뱀장어",
+      "category": "동물 (어류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "도마뱀",
+      "category": "동물 (파충류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "카멜레온",
+      "category": "동물 (파충류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "이구아나",
+      "category": "동물 (파충류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "거북",
+      "category": "동물 (파충류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": -1
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": -1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "바다거북",
+      "category": "동물 (파충류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 1
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "악어",
+      "category": "동물 (파충류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "킹코브라",
+      "category": "동물 (파충류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "뱀",
+      "category": "동물 (파충류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": -1
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": -1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "구렁이",
+      "category": "동물 (파충류)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "지네",
+      "category": "동물 (절지동물)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 1
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "전갈",
+      "category": "동물 (절지동물)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "거미",
+      "category": "동물 (절지동물)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "타란툴라",
+      "category": "동물 (절지동물)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 0
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "개미",
+      "category": "동물 (절지동물)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 1
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "불개미",
+      "category": "동물 (절지동물)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 1
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "흰개미",
+      "category": "동물 (절지동물)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 1
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "꿀벌",
+      "category": "동물 (곤충)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 1
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "말벌",
+      "category": "동물 (곤충)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 1
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "장수말벌",
+      "category": "동물 (곤충)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 1
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "무당벌레",
+      "category": "동물 (곤충)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 1
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "사슴벌레",
+      "category": "동물 (곤충)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 1
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "name": "장수풍뎅이",
+      "category": "동물 (곤충)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 1
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "매미",
+      "category": "동물 (곤충)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 1
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "메뚜기",
+      "category": "동물 (곤충)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 1
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "귀뚜라미",
+      "category": "동물 (곤충)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 1
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "여치",
+      "category": "동물 (곤충)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 1
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "바퀴벌레",
+      "category": "동물 (곤충)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 1
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 1
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 1
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "파리",
+      "category": "동물 (곤충)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 1
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "모기",
+      "category": "동물 (곤충)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 1
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "나방",
+      "category": "동물 (곤충)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 1
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "name": "나비",
+      "category": "동물 (곤충)",
+      "questions": [
+        {
+          "question": "동물인가요?",
+          "answer": 1
+        },
+        {
+          "question": "털이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "추운 곳에서 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "다리가 여섯 개인가요?",
+          "answer": 1
+        },
+        {
+          "question": "바다에 사나요?",
+          "answer": 0
+        },
+        {
+          "question": "알을 낳나요?",
+          "answer": 1
+        },
+        {
+          "question": "초식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "육식동물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "실존인물인가요?",
+          "answer": 0
+        },
+        {
+          "question": "두 눈을 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "날 수 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "이름이 네 글자인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름이 두 글자인가요?",
+          "answer": 1
+        },
+        {
+          "question": "등껍질이 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "검정색인가요?",
+          "answer": 0
+        },
+        {
+          "question": "이름에 ㅈ이 들어가나요?",
+          "answer": 0
+        },
+        {
+          "question": "날개를 가지고 있나요?",
+          "answer": 1
+        },
+        {
+          "question": "더운 곳(사막)에 서식하나요?",
+          "answer": 0
+        },
+        {
+          "question": "탈 수 있나요?",
+          "answer": 0
+        },
+        {
+          "question": "뿔이 있습니까?",
+          "answer": 0
+        }
+      ]
+    }
+  ]
+}

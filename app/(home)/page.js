@@ -1,1 +1,8 @@
-// 추후 삭제할 것
+export default function Home() {
+    return (
+      <div>
+          
+      </div>
+    );
+  }
+  
