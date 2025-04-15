@@ -1,5 +1,3 @@
-# ai/models/model2.py
-
 import os
 import random
 import numpy as np
@@ -14,7 +12,7 @@ from tf_agents.replay_buffers import tf_uniform_replay_buffer
 from tf_agents.trajectories import trajectory, policy_step
 import json
 
-# 지도학습 모델 불러오기 (필요한 경우 함께 사용)
+# 지도학습 모델 불러오기 (필요시 사용)
 from tensorflow.keras import models
 inference_model = models.load_model(os.path.join("ai", "models", "inference_model.h5"), compile=False)
 
@@ -26,7 +24,6 @@ with open(os.path.join("ai", "dataset", "final_dataset_with_family_and_size.json
 
 print("Unique animals:", unique_animals)
 
-
 # -------------------------------
 # 환경 정의 (TwentyQuestionsTFEnv)
 # -------------------------------
@@ -34,10 +31,17 @@ class TwentyQuestionsTFEnv(py_environment.PyEnvironment):
     def __init__(self, dataset):
         self.dataset = dataset
         self.num_questions = len(dataset[0]['questions'])
+        self.unique_animals = [a["name"] for a in dataset]
+        self.num_animals = len(self.unique_animals)
+
+        self.total_actions = self.num_questions + self.num_animals  # 질문 + 추측
+
         self._action_spec = array_spec.BoundedArraySpec(
-            shape=(), dtype=np.int32, minimum=0, maximum=self.num_questions - 1, name='action')
+            shape=(), dtype=np.int32, minimum=0, maximum=self.total_actions - 1, name='action')
+
         self._observation_spec = array_spec.BoundedArraySpec(
             shape=(self.num_questions,), dtype=np.float32, minimum=-1, maximum=2, name='observation')
+
         self._episode_ended = False
         self.reset()
 
@@ -48,7 +52,6 @@ class TwentyQuestionsTFEnv(py_environment.PyEnvironment):
         return self._observation_spec
 
     def _reset(self):
-        # target 동물을 랜덤으로 선택합니다.
         self.target = random.choice(self.dataset)
         self.asked_questions = set()
         self.history = [-1] * self.num_questions
@@ -59,22 +62,26 @@ class TwentyQuestionsTFEnv(py_environment.PyEnvironment):
         action = int(np.squeeze(action))
         if self._episode_ended:
             return self.reset()
-        if action in self.asked_questions:
-            reward = -5.0
-            return ts.transition(np.array(self.history, dtype=np.float32), reward=reward, discount=1.0)
-        self.asked_questions.add(action)
-        answer = self.target['questions'][action]['answer']
-        self.history[action] = answer
-        reward = -1.0
-        if len(self.asked_questions) == self.num_questions:
-            self._episode_ended = True
-        return ts.transition(np.array(self.history, dtype=np.float32), reward=reward, discount=1.0)
 
-    def guess(self, guess_name):
-        if not self._episode_ended:
+        if action < self.num_questions:
+            # 질문 행동
+            if action in self.asked_questions:
+                reward = -0.5
+            else:
+                self.asked_questions.add(action)
+                answer = self.target['questions'][action]['answer']
+                self.history[action] = answer
+                reward = -0.1
+            return ts.transition(np.array(self.history, dtype=np.float32), reward=reward, discount=1.0)
+
+        else:
+            # 추측 행동
+            guess_index = action - self.num_questions
+            guess_name = self.unique_animals[guess_index]
             self._episode_ended = True
-        reward = 100.0 if guess_name == self.target['name'] else -50.0
-        return ts.termination(np.array(self.history, dtype=np.float32), reward=reward)
+            reward = 100.0 if guess_name == self.target['name'] else -50.0
+            return ts.termination(np.array(self.history, dtype=np.float32), reward=reward)
+
 
 
 # -------------------------------
@@ -84,28 +91,45 @@ train_py_env = TwentyQuestionsTFEnv(animals)
 train_env = tf_py_environment.TFPyEnvironment(train_py_env)
 
 fc_layer_params = (100,)
-q_net = q_network.QNetwork(train_env.observation_spec(),
-                           train_env.action_spec(),
-                           fc_layer_params=fc_layer_params)
+q_net = q_network.QNetwork(
+    train_env.observation_spec(),
+    train_env.action_spec(),  # 자동으로 total_actions 적용됨
+    fc_layer_params=(100,)
+)
 
+
+# 사용: 경사 클리핑(clipnorm=1.0)과 학습률 조정
 optimizer = tf.compat.v1.train.AdamOptimizer(learning_rate=1e-3)
 train_step_counter = tf.Variable(0)
 
-agent = dqn_agent.DqnAgent(train_env.time_step_spec(),
-                           train_env.action_spec(),
-                           q_network=q_net,
-                           optimizer=optimizer,
-                           td_errors_loss_fn=common.element_wise_huber_loss,
-                           train_step_counter=train_step_counter)
+# ε-greedy 탐색 정책을 위한 초기 ε 값과 감소율
+initial_epsilon = 1.0
+final_epsilon = 0.1
+epsilon_decay_steps = 10000
+
+agent = dqn_agent.DqnAgent(
+    train_env.time_step_spec(),
+    train_env.action_spec(),
+    q_network=q_net,
+    optimizer=optimizer,
+    td_errors_loss_fn=common.element_wise_huber_loss,
+    train_step_counter=train_step_counter,
+    epsilon_greedy=lambda: np.interp(
+        train_step_counter.numpy(), [0, epsilon_decay_steps], [initial_epsilon, final_epsilon]
+    )
+)
 agent.initialize()
 
 replay_buffer = tf_uniform_replay_buffer.TFUniformReplayBuffer(
     data_spec=agent.collect_data_spec,
     batch_size=train_env.batch_size,
-    max_length=10000)
+    max_length=10000
+)
 
 from tf_agents.policies import random_tf_policy
-random_policy = random_tf_policy.RandomTFPolicy(train_env.time_step_spec(), train_env.action_spec())
+random_policy = random_tf_policy.RandomTFPolicy(
+    train_env.time_step_spec(), train_env.action_spec()
+)
 
 def collect_step(environment, policy, buffer):
     time_step = environment.current_time_step()
@@ -123,7 +147,9 @@ iterator = iter(dataset)
 
 checkpoint_dir = "ai/checkpoints"
 os.makedirs(checkpoint_dir, exist_ok=True)
-checkpoint = tf.train.Checkpoint(agent=agent, optimizer=optimizer, train_step_counter=train_step_counter)
+checkpoint = tf.train.Checkpoint(
+    agent=agent, optimizer=optimizer, train_step_counter=train_step_counter
+)
 latest_ckpt = tf.train.latest_checkpoint(checkpoint_dir)
 if latest_ckpt:
     checkpoint.restore(latest_ckpt)
@@ -135,61 +161,76 @@ if latest_ckpt:
 # -------------------------------
 def simulate_episode(env, target_animal):
     """
-    주어진 target_animal(데이터셋의 동물 객체) 정보를 이용하여
-    자동으로 정답(사용자 정답처럼)을 입력하는 에피소드를 생성합니다.
+    주어진 target_animal 정보를 이용하여 자동으로 정답(사용자 정답처럼)을 입력하는 에피소드를 생성합니다.
+    이 함수는 자동 학습을 위한 경험을 생성하는 역할을 합니다.
     """
-    # env.reset()를 호출하면 랜덤 target이 선택되지만, 여기서는 우리가 지정한 target_animal으로 덮어씁니다.
     env.target = target_animal
     env.asked_questions = set()
-    # 정답 벡터(각 질문에 대한 정답)을 가져옵니다.
     correct_answers = [q['answer'] for q in target_animal['questions']]
     env.history = correct_answers.copy()
-    # 모든 질문을 이미 “답변”한 것으로 처리합니다.
     env.asked_questions = set(range(env.num_questions))
     env._episode_ended = True
-    # 최종 추측 (정답으로 추측)
     final_time_step = env.guess(target_animal['name'])
-    # 생성된 경험(trajectory)을 반환합니다.
     batched_state = np.array([env.history], dtype=np.float32)
     user_time_step = ts.TimeStep(
         step_type=np.array([ts.StepType.FIRST], dtype=np.int32),
         reward=np.array([0.0], dtype=np.float32),
         discount=np.array([1.0], dtype=np.float32),
-        observation=batched_state)
+        observation=batched_state
+    )
     user_next_time_step = ts.TimeStep(
         step_type=np.array([ts.StepType.LAST], dtype=np.int32),
         reward=np.array([float(final_time_step.reward)], dtype=np.float32),
         discount=np.array([0.0], dtype=np.float32),
-        observation=batched_state)
+        observation=batched_state
+    )
     dummy_action = np.array([0], dtype=np.int32)
     dummy_action_step = policy_step.PolicyStep(action=dummy_action, state=())
-    user_traj = trajectory.from_transition(user_time_step, dummy_action_step, user_next_time_step)
+    user_traj = trajectory.from_transition(
+        user_time_step, dummy_action_step, user_next_time_step
+    )
     return user_traj, final_time_step
+
 
 # -------------------------------
 # 자동 학습 루프: 시뮬레이션 에피소드로 학습하기
 # -------------------------------
+def simulate_episode_with_guess(env, policy, buffer):
+    """
+    강화학습 에이전트가 질문과 정답 추측까지 스스로 진행하는 시뮬레이션 에피소드.
+    에피소드 하나의 trajectory를 replay buffer에 저장합니다.
+    """
+    time_step = env.reset()
+    episode_length = 0
+
+    while not time_step.is_last():
+        action_step = policy.action(time_step)
+        next_time_step = env.step(action_step.action)
+
+        traj = trajectory.from_transition(time_step, action_step, next_time_step)
+        buffer.add_batch(traj)
+
+        time_step = next_time_step
+        episode_length += 1
+
+    return episode_length
+
+
 def automated_training(num_episodes=1000, steps_per_episode=100):
-    """
-    데이터셋의 동물들을 순회하거나 무작위로 선택하여
-    자동으로 에피소드를 생성하고, 이를 Replay Buffer에 추가한 후,
-    추가 경험을 이용해 강화학습 에이전트를 학습합니다.
-    """
-    num_animals = len(animals)
     for ep in range(num_episodes):
-        # 동물들을 무작위로 선택하거나 순서대로 선택할 수 있습니다.
-        target_animal = random.choice(animals)
-        traj, final_ts = simulate_episode(train_py_env, target_animal)
-        # Replay Buffer에 추가
-        replay_buffer.add_batch(traj)
-        # (선택 사항) 에피소드 당 일정 횟수의 학습 진행
+        episode_length = simulate_episode_with_guess(train_env, agent.collect_policy, replay_buffer)
+
         for _ in range(steps_per_episode):
             experience, _ = next(iterator)
             loss_info = agent.train(experience)
-        if (ep+1) % 100 == 0:
+
+        if (ep + 1) % 100 == 0:
             ckpt_path = checkpoint.save(os.path.join(checkpoint_dir, "ckpt"))
-            print(f"에피소드 {ep+1} 진행, checkpoint saved at {ckpt_path}. Loss: {loss_info.loss.numpy()}")
-    print("자동 학습 완료!")
+            print(f"[에피소드 {ep+1}] 에피소드 길이: {episode_length}, 체크포인트 저장됨: {ckpt_path}. Loss: {loss_info.loss.numpy()}")
+
+    print("🎉 자동 학습 완료!")
+
+
 
 # -------------------------------
 # 사용자와 상호작용하는 통합 추론 함수 (선택 사항)
@@ -197,18 +238,18 @@ def automated_training(num_episodes=1000, steps_per_episode=100):
 def integrated_inference():
     """
     사용자가 생각한 동물을 맞추기 위해, AI는 질문을 통해 후보 목록을 좁힙니다.
-    (여기서는 사용자 입력을 받는 부분도 포함되어 있으나, 자동 학습과 별개로 추론 후 추가 경험을 저장합니다.)
+    사용자의 답변을 받아 후보 목록을 출력하고, 최종 추측 후 경험을 저장 및 추가 학습합니다.
     """
     print("사용자가 생각하는 동물을 맞추겠습니다.")
     correct_animal = input("사용자가 생각한 동물(정답)을 입력하세요: ").strip()
     print("----- 질문을 시작합니다. -----")
-    state = train_env.reset()  # 배치 관측값 (1, num_questions)
+    state = train_env.reset()
     asked = set()
-    guess_animal = None  # 후보 단계에서 결정된 추측값
+    guess_animal = None
 
     while True:
         available = set(range(train_py_env.num_questions)) - asked
-        if len(available) == 0:
+        if not available:
             print("모든 질문을 마쳤습니다.")
             break
 
@@ -217,7 +258,7 @@ def integrated_inference():
         if q_index not in available:
             q_index = random.choice(list(available))
         asked.add(q_index)
-        
+
         question_text = train_py_env.dataset[0]['questions'][q_index]['question']
         print(f"질문 {q_index+1}: {question_text}")
         try:
@@ -229,11 +270,11 @@ def integrated_inference():
         except Exception:
             print("입력 오류 발생, -1 (미답변)으로 처리합니다.")
             user_answer = -1
-        
+
         train_py_env.history[q_index] = user_answer
         train_py_env.asked_questions.add(q_index)
         state = ts.transition(np.array([train_py_env.history], dtype=np.float32),
-                              reward=-1.0,
+                              reward=-0.1,
                               discount=1.0)
 
         answered_count = sum(1 for x in train_py_env.history if x != -1)
@@ -253,7 +294,7 @@ def integrated_inference():
 
             print("----------------------------")
             print("현재 후보 동물:", candidates)
-            print("현재 답변 벡터:", train_py_env.history[:train_py_env.num_questions])
+            print("현재 답변 벡터:", train_py_env.history)
             print("----------------------------")
             if len(candidates) == 1 and confidence >= 0.9:
                 print("후보 목록이 1개로 좁혀졌습니다.")
@@ -263,7 +304,7 @@ def integrated_inference():
                 for idx, candidate in enumerate(candidates):
                     print(f"{idx+1}. {candidate}")
                 choice = input("이 중 올바른 동물을 선택하세요 (번호 입력, 엔터를 누르면 계속 질문합니다): ").strip()
-                if choice != "":
+                if choice:
                     try:
                         choice = int(choice)
                         if 1 <= choice <= len(candidates):
@@ -274,14 +315,14 @@ def integrated_inference():
                     except Exception:
                         print("입력 오류입니다. 계속 질문 진행.")
     print("----- 질문 종료 -----")
-    print("입력한 답변 벡터:", train_py_env.history[:train_py_env.num_questions])
+    print("입력한 답변 벡터:", train_py_env.history)
     
     final_guess = input("최종 추측할 동물명을 입력하세요 (엔터: 후보 또는 지도학습 모델 사용): ").strip()
-    if final_guess == "":
+    if not final_guess:
         if guess_animal is not None:
             final_guess = guess_animal
         else:
-            inference_input = np.array(train_py_env.history[:train_py_env.num_questions], dtype=np.float32).reshape(1, -1)
+            inference_input = np.array(train_py_env.history, dtype=np.float32).reshape(1, -1)
             pred_probs = inference_model.predict(inference_input)
             pred_class = np.argmax(pred_probs, axis=1)[0]
             final_guess = unique_animals[pred_class]
@@ -291,17 +332,19 @@ def integrated_inference():
     print("추측 결과 보상:", float(final_time_step.reward))
     print("실제 정답 동물:", correct_animal)
     
-    batched_final_state = np.array([train_py_env.history[:train_py_env.num_questions]], dtype=np.float32)
+    batched_final_state = np.array([train_py_env.history], dtype=np.float32)
     user_time_step = ts.TimeStep(
         step_type=np.array([ts.StepType.FIRST], dtype=np.int32),
         reward=np.array([0.0], dtype=np.float32),
         discount=np.array([1.0], dtype=np.float32),
-        observation=batched_final_state)
+        observation=batched_final_state
+    )
     user_next_time_step = ts.TimeStep(
         step_type=np.array([ts.StepType.LAST], dtype=np.int32),
         reward=np.array([float(final_time_step.reward)], dtype=np.float32),
         discount=np.array([0.0], dtype=np.float32),
-        observation=batched_final_state)
+        observation=batched_final_state
+    )
     dummy_action = np.array([0], dtype=np.int32)
     dummy_action_step = policy_step.PolicyStep(action=dummy_action, state=())
     user_traj = trajectory.from_transition(user_time_step, dummy_action_step, user_next_time_step)
