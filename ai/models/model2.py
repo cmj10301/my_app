@@ -65,10 +65,7 @@ class TwentyQuestionsTFEnv(py_environment.PyEnvironment):
     def guess(self, guess_name):
         if not self._episode_ended:
             self._episode_ended = True
-        if guess_name == self.target['name']:
-            reward = 100.0
-        else:
-            reward = -50.0
+        reward = 100.0 if guess_name == self.target['name'] else -50.0
         return ts.termination(np.array(self.history, dtype=np.float32), reward=reward)
 
 
@@ -134,15 +131,15 @@ if latest_ckpt:
     checkpoint.restore(latest_ckpt)
     print(f"Checkpoint {latest_ckpt} 복원됨.")
     
-# 자동 학습 루프 (기본 학습)
-num_iterations = 2000  # 학습 반복 횟수
-for i in range(num_iterations):
-    experience, _ = next(iterator)
-    loss_info = agent.train(experience)
-    if agent.train_step_counter.numpy() % 1000 == 0:
-        ckpt_path = checkpoint.save(os.path.join(checkpoint_dir, "ckpt"))
-        print(f"Step {agent.train_step_counter.numpy()} checkpoint saved at {ckpt_path}.")
-print("기본 학습 완료!")
+# # 자동 학습 루프 (기본 학습)
+# num_iterations = 2000  # 학습 반복 횟수
+# for i in range(num_iterations):
+#     experience, _ = next(iterator)
+#     loss_info = agent.train(experience)
+#     if agent.train_step_counter.numpy() % 1000 == 0:
+#         ckpt_path = checkpoint.save(os.path.join(checkpoint_dir, "ckpt"))
+#         print(f"Step {agent.train_step_counter.numpy()} checkpoint saved at {ckpt_path}.")
+# print("기본 학습 완료!")
 
 # ------------------ 인터랙티브 게임 및 추가 학습 ------------------
 # --- 인터랙티브 게임 및 추가 학습 ---
@@ -243,22 +240,36 @@ def interactive_game():
     print("추측 결과 보상:", float(final_time_step.reward))
     print("실제 정답 동물:", train_py_env.target['name'])
     
-    # --- 사용자 경험을 Replay Buffer에 단 한 번 추가한 후 추가 학습 수행 ---
-    # final_state: unbatched, shape (num_questions,) — 새 데이터셋 기준 예: (23,)
-    final_state = np.array(train_py_env.history, dtype=np.float32)
-    # 여기서 배치 차원이 없어야 하므로 final_state 그대로 사용합니다.
-    user_time_step = ts.restart(final_state)  # TimeStep with observation shape: (num_questions,)
-    # 대신, 에이전트의 정책 함수 호출 대신 더미 액션을 생성합니다.
-    dummy_action = np.array(0, dtype=np.int32)  # action spec: scalar
+    # 템플릿 TimeStep을 가져와 배치 shape을 맞춤
+    template_time_step = train_env.reset()  # 모든 필드가 배치 형태 (예: (1, ...))
+    
+    # 사용자가 입력한 최종 관측값을 배치화
+    user_obs = np.array(train_py_env.history, dtype=np.float32)  # (num_questions,)
+    user_obs = np.expand_dims(user_obs, axis=0)  # (1, num_questions)
+    
+    user_time_step = ts.TimeStep(
+        step_type = template_time_step.step_type,    # (1,)
+        reward = template_time_step.reward,          # (1,)
+        discount = template_time_step.discount,      # (1,)
+        observation = user_obs                       # (1, num_questions)
+    )
+    
+    # dummy action: 배치화된 액션 (1,)
+    dummy_action = np.array([0], dtype=np.int32)
     dummy_action_step = policy_step.PolicyStep(action=dummy_action, state=())
-    user_next_time_step = ts.termination(final_state, reward=float(final_time_step.reward))
+    
+     # 종료 상태 생성 시, 종료를 나타내는 step_type을 명시적으로 np.int32로 설정
+    terminal_step_type = np.array([ts.StepType.LAST], dtype=np.int32)
+    user_next_time_step = ts.TimeStep(
+        step_type = terminal_step_type,  # 배치형태: (1,)
+        reward = np.array([float(final_time_step.reward)], dtype=np.float32),  # (1,)
+        discount = np.array([0.0], dtype=np.float32),  # (1,)
+        observation = user_obs  # (1, num_questions)
+    )
+    
+    # trajectory 생성 (모든 필드가 배치 차원 포함)
     user_traj = trajectory.from_transition(user_time_step, dummy_action_step, user_next_time_step)
     replay_buffer.add_batch(user_traj)
-    experience, _ = next(iterator)
-    loss_info = agent.train(experience)
-    ckpt_path = checkpoint.save(os.path.join(checkpoint_dir, "ckpt"))
-    print(f"추가 학습 후 checkpoint 저장됨: {ckpt_path}")
-
-
+    
 # --- 인터랙티브 게임 실행 ---
 interactive_game()
