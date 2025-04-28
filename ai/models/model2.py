@@ -58,12 +58,10 @@ class TwentyQuestionsTFEnv(py_environment.PyEnvironment):
             self.asked_questions.add(action)
             answer = self.target['questions'][action]['answer']
 
-            if random.random() < self.noise_rate:
-                if answer in [0, 1]:
-                    answer = 1 - answer
-
+            # ✨ 수정된 부분: 질문 1개당 -1.0 페널티 부여
+            question_penalty = -1.0
             self.history[action] = answer
-            return ts.transition(np.array(self.history, dtype=np.float32), reward=-0.1, discount=1.0)
+            return ts.transition(np.array(self.history, dtype=np.float32), reward=question_penalty, discount=1.0)
 
         else:
             if len(self.asked_questions) < 5:
@@ -74,6 +72,7 @@ class TwentyQuestionsTFEnv(py_environment.PyEnvironment):
             self._episode_ended = True
             reward = 100.0 if guess_name == self.target['name'] else -50.0
             return ts.termination(np.array(self.history, dtype=np.float32), reward=reward)
+
 
 # 에이전트 구성
 train_py_env = TwentyQuestionsTFEnv(animals)
@@ -208,6 +207,8 @@ def automated_training(num_episodes=15000, steps_per_episode=300):
     plt.grid(True)
     plt.tight_layout()
     plt.show()
+    q_net.model.save('ai/models/q_network_model.h5')
+    print("✅ 학습 완료! Q-Network 모델 저장되었습니다.")
 
 # 평가 함수
 def evaluate_accuracy(env, policy, test_episodes=100):
