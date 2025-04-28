@@ -1,5 +1,5 @@
 # model2.py
-# 강화학습 기반 스무고개 AI - 질문/추측/정답률 자동 평가 포함
+# 강화학습 기반 스무고개 AI - 질문/추측/정답률 자동 평가 + 노이즈 대응 + 장기 학습 최적화
 
 import os
 import random
@@ -27,8 +27,9 @@ with open("ai/dataset/final_dataset_with_family_and_size.json", encoding='utf-8'
 
 # 환경 정의
 class TwentyQuestionsTFEnv(py_environment.PyEnvironment):
-    def __init__(self, dataset):
+    def __init__(self, dataset, noise_rate=0.05):
         self.dataset = dataset
+        self.noise_rate = noise_rate
         self.num_questions = len(dataset[0]['questions'])
         self.unique_animals = [a["name"] for a in dataset]
         self.num_animals = len(self.unique_animals)
@@ -56,13 +57,19 @@ class TwentyQuestionsTFEnv(py_environment.PyEnvironment):
         if action < self.num_questions:
             if action in self.asked_questions and train_step_counter.numpy() < 10000:
                 return ts.transition(np.array(self.history, dtype=np.float32), reward=-1.0, discount=1.0)
+
             self.asked_questions.add(action)
             answer = self.target['questions'][action]['answer']
+
+            # 5% 확률로 노이즈 추가
+            if random.random() < self.noise_rate:
+                if answer in [0, 1]:
+                    answer = 1 - answer
+
             self.history[action] = answer
             return ts.transition(np.array(self.history, dtype=np.float32), reward=-0.1, discount=1.0)
-        
+
         else:
-            # 질문 5개 이상 해야 추측 가능
             if len(self.asked_questions) < 5:
                 return ts.transition(np.array(self.history, dtype=np.float32), reward=-10.0, discount=1.0)
 
@@ -89,8 +96,8 @@ q_net = q_network.QNetwork(
 optimizer = tf.compat.v1.train.AdamOptimizer(1e-3)
 train_step_counter = tf.Variable(0)
 
-# epsilon 감소 속도 빠르게: [0, 1000] 스텝 사이 1.0 → 0.1
-epsilon_fn = lambda: np.interp(train_step_counter.numpy(), [0, 1000], [1.0, 0.1])
+# epsilon 0~5000 스텝 동안 감소
+epsilon_fn = lambda: np.interp(train_step_counter.numpy(), [0, 5000], [1.0, 0.1])
 
 agent = dqn_agent.DqnAgent(
     train_env.time_step_spec(),
@@ -122,10 +129,10 @@ latest_ckpt = tf.train.latest_checkpoint(checkpoint_dir)
 if latest_ckpt:
     checkpoint.restore(latest_ckpt)
 
-# 학습 기록용 리스트들
+# 기록용 리스트
 avg_rewards, question_counts, ckpt_log = [], [], []
 
-# 에피소드 진행 함수
+# 에피소드 진행
 def simulate_episode_with_guess(env, policy, buffer):
     time_step = env.reset()
     total_reward = 0.0
@@ -138,8 +145,8 @@ def simulate_episode_with_guess(env, policy, buffer):
     avg_rewards.append(float(total_reward))
     question_counts.append(len(env._envs[0].asked_questions))
 
-# 자동 학습 함수
-def automated_training(num_episodes=3000, steps_per_episode=100):  # 수정: 3000 에피소드
+# 학습 함수
+def automated_training(num_episodes=15000, steps_per_episode=300):
     log_rows = []
     correct = 0
     for ep in range(num_episodes):
@@ -160,14 +167,18 @@ def automated_training(num_episodes=3000, steps_per_episode=100):  # 수정: 300
         acc = correct / (ep + 1)
         log_rows.append((ep + 1, avg_rewards[-1], total_q, acc))
 
-        # 에피소드별 진행 출력
-        print(f"Episode {ep+1}: Reward={avg_rewards[-1]:.2f}, Questions={total_q}, Accuracy={acc*100:.2f}%")
+        # 500 에피소드마다 출력
+        if (ep + 1) % 500 == 0:
+            print(f"[에피소드 {ep+1}] 최근 평균 보상: {np.mean(avg_rewards[-500:]):.2f}, "
+                  f"최근 평균 질문 수: {np.mean(question_counts[-500:]):.2f}, "
+                  f"정확도: {acc*100:.2f}%")
 
-        if (ep + 1) % 100 == 0:
+        # 500 에피소드마다 체크포인트 저장
+        if (ep + 1) % 500 == 0:
             ckpt_path = checkpoint.save(os.path.join(checkpoint_dir, "ckpt"))
             ckpt_log.append((ep + 1, avg_rewards[-1], total_q, os.path.basename(ckpt_path)))
 
-    # 학습 결과 저장
+    # 결과 저장
     with open("ai/log/reward_log.csv", "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["episode", "reward", "question_count", "accuracy", "ckpt_file"])
@@ -176,7 +187,7 @@ def automated_training(num_episodes=3000, steps_per_episode=100):  # 수정: 300
             acc = log_rows[i][3]
             writer.writerow([ep, r, q, acc, ckpt])
 
-    # 학습 과정 시각화
+    # 그래프 그리기
     plt.plot(avg_rewards, label="보상")
     plt.plot(question_counts, label="질문 수")
     plt.plot([x[3] * 100 for x in log_rows], label="정답률 (%)")
@@ -203,6 +214,6 @@ def evaluate_accuracy(env, policy, test_episodes=100):
     avg_q = total_questions / test_episodes
     print(f"✅ 정확도: {acc * 100:.2f}% (평균 질문 수: {avg_q:.2f})")
 
-# 실행부
+# 실행
 if __name__ == "__main__":
-    automated_training(num_episodes=3000, steps_per_episode=100)
+    automated_training(num_episodes=15000, steps_per_episode=300)
