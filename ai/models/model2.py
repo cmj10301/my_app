@@ -1,6 +1,3 @@
-# model2.py
-# 강화학습 기반 스무고개 AI - 질문/추측/정답률 자동 평가 + 노이즈 대응 + 장기 학습 최적화
-
 import os
 import random
 import numpy as np
@@ -61,7 +58,6 @@ class TwentyQuestionsTFEnv(py_environment.PyEnvironment):
             self.asked_questions.add(action)
             answer = self.target['questions'][action]['answer']
 
-            # 5% 확률로 노이즈 추가
             if random.random() < self.noise_rate:
                 if answer in [0, 1]:
                     answer = 1 - answer
@@ -93,11 +89,19 @@ q_net = q_network.QNetwork(
     fc_layer_params=fc_layer_params
 )
 
-optimizer = tf.compat.v1.train.AdamOptimizer(1e-3)
+optimizer = tf.keras.optimizers.Adam(learning_rate=1e-3)
 train_step_counter = tf.Variable(0)
+epsilon = tf.Variable(1.0)
 
 # epsilon 0~5000 스텝 동안 감소
-epsilon_fn = lambda: np.interp(train_step_counter.numpy(), [0, 5000], [1.0, 0.1])
+def decay_epsilon():
+    step = train_step_counter.numpy()
+    epsilon_value = np.interp(step, [0, 5000], [1.0, 0.1])
+    epsilon.assign(epsilon_value)
+
+def get_epsilon():
+    decay_epsilon()
+    return epsilon.numpy()
 
 agent = dqn_agent.DqnAgent(
     train_env.time_step_spec(),
@@ -106,7 +110,7 @@ agent = dqn_agent.DqnAgent(
     optimizer,
     td_errors_loss_fn=common.element_wise_huber_loss,
     train_step_counter=train_step_counter,
-    epsilon_greedy=epsilon_fn
+    epsilon_greedy=get_epsilon
 )
 agent.initialize()
 
@@ -115,8 +119,20 @@ replay_buffer = tf_uniform_replay_buffer.TFUniformReplayBuffer(
     train_env.batch_size,
     max_length=10000
 )
+
+gpus = tf.config.list_physical_devices('GPU')
+if gpus:
+    gpu_info = tf.config.experimental.get_device_details(gpus[0])
+    gpu_name = gpu_info.get('device_name', 'Unknown GPU')
+    if "4060" in gpu_name:
+        sample_batch_size = 256
+    else:
+        sample_batch_size = 128
+else:
+    sample_batch_size = 64
+
 dataset = replay_buffer.as_dataset(
-    sample_batch_size=128,
+    sample_batch_size=sample_batch_size,
     num_steps=2
 ).prefetch(3)
 iterator = iter(dataset)
@@ -167,18 +183,13 @@ def automated_training(num_episodes=15000, steps_per_episode=300):
         acc = correct / (ep + 1)
         log_rows.append((ep + 1, avg_rewards[-1], total_q, acc))
 
-        # 500 에피소드마다 출력
         if (ep + 1) % 500 == 0:
-            print(f"[에피소드 {ep+1}] 최근 평균 보상: {np.mean(avg_rewards[-500:]):.2f}, "
-                  f"최근 평균 질문 수: {np.mean(question_counts[-500:]):.2f}, "
-                  f"정확도: {acc*100:.2f}%")
+            print(f"[에피소드 {ep+1}] 최근 평균 보상: {np.mean(avg_rewards[-500:]):.2f}, 최근 평균 질문 수: {np.mean(question_counts[-500:]):.2f}, 정확도: {acc*100:.2f}%")
 
-        # 500 에피소드마다 체크포인트 저장
         if (ep + 1) % 500 == 0:
             ckpt_path = checkpoint.save(os.path.join(checkpoint_dir, "ckpt"))
             ckpt_log.append((ep + 1, avg_rewards[-1], total_q, os.path.basename(ckpt_path)))
 
-    # 결과 저장
     with open("ai/log/reward_log.csv", "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["episode", "reward", "question_count", "accuracy", "ckpt_file"])
@@ -187,7 +198,6 @@ def automated_training(num_episodes=15000, steps_per_episode=300):
             acc = log_rows[i][3]
             writer.writerow([ep, r, q, acc, ckpt])
 
-    # 그래프 그리기
     plt.plot(avg_rewards, label="보상")
     plt.plot(question_counts, label="질문 수")
     plt.plot([x[3] * 100 for x in log_rows], label="정답률 (%)")
@@ -214,6 +224,5 @@ def evaluate_accuracy(env, policy, test_episodes=100):
     avg_q = total_questions / test_episodes
     print(f"✅ 정확도: {acc * 100:.2f}% (평균 질문 수: {avg_q:.2f})")
 
-# 실행
 if __name__ == "__main__":
     automated_training(num_episodes=15000, steps_per_episode=300)
