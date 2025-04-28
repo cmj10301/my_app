@@ -1,4 +1,4 @@
-# twenty_questions_ai.py
+# model2.py
 # 강화학습 기반 스무고개 AI - 질문/추측/정답률 자동 평가 포함
 
 import os
@@ -17,7 +17,7 @@ from tf_agents.agents.dqn import dqn_agent
 from tf_agents.utils import common
 from tf_agents.replay_buffers import tf_uniform_replay_buffer
 from tf_agents.trajectories import trajectory
-from tensorflow.keras import models
+from tensorflow.keras import layers, models
 
 # 모델 및 데이터 로딩
 inference_model = models.load_model("ai/models/inference_model.h5", compile=False)
@@ -52,6 +52,7 @@ class TwentyQuestionsTFEnv(py_environment.PyEnvironment):
         action = int(np.squeeze(action))
         if self._episode_ended:
             return self.reset()
+
         if action < self.num_questions:
             if action in self.asked_questions and train_step_counter.numpy() < 10000:
                 return ts.transition(np.array(self.history, dtype=np.float32), reward=-1.0, discount=1.0)
@@ -59,7 +60,12 @@ class TwentyQuestionsTFEnv(py_environment.PyEnvironment):
             answer = self.target['questions'][action]['answer']
             self.history[action] = answer
             return ts.transition(np.array(self.history, dtype=np.float32), reward=-0.1, discount=1.0)
+        
         else:
+            # 질문 5개 이상 해야 추측 가능
+            if len(self.asked_questions) < 5:
+                return ts.transition(np.array(self.history, dtype=np.float32), reward=-10.0, discount=1.0)
+
             guess_index = action - self.num_questions
             guess_name = self.unique_animals[guess_index]
             self._episode_ended = True
@@ -69,12 +75,23 @@ class TwentyQuestionsTFEnv(py_environment.PyEnvironment):
 # 에이전트 구성
 train_py_env = TwentyQuestionsTFEnv(animals)
 train_env = tf_py_environment.TFPyEnvironment(train_py_env)
+
 fc_layer_params = (64,)
-q_net = q_network.QNetwork(train_env.observation_spec(), train_env.action_spec(), fc_layer_params)
+
+q_net = q_network.QNetwork(
+    train_env.observation_spec(),
+    train_env.action_spec(),
+    preprocessing_layers=None,
+    preprocessing_combiner=None,
+    fc_layer_params=fc_layer_params
+)
+
 optimizer = tf.compat.v1.train.AdamOptimizer(1e-3)
 train_step_counter = tf.Variable(0)
 
-epsilon_fn = lambda: np.interp(train_step_counter.numpy(), [0, 3000], [1.0, 0.1])
+# epsilon 감소 속도 빠르게: [0, 1000] 스텝 사이 1.0 → 0.1
+epsilon_fn = lambda: np.interp(train_step_counter.numpy(), [0, 1000], [1.0, 0.1])
+
 agent = dqn_agent.DqnAgent(
     train_env.time_step_spec(),
     train_env.action_spec(),
@@ -86,8 +103,15 @@ agent = dqn_agent.DqnAgent(
 )
 agent.initialize()
 
-replay_buffer = tf_uniform_replay_buffer.TFUniformReplayBuffer(agent.collect_data_spec, train_env.batch_size, max_length=10000)
-dataset = replay_buffer.as_dataset(sample_batch_size=128, num_steps=2).prefetch(3)
+replay_buffer = tf_uniform_replay_buffer.TFUniformReplayBuffer(
+    agent.collect_data_spec,
+    train_env.batch_size,
+    max_length=10000
+)
+dataset = replay_buffer.as_dataset(
+    sample_batch_size=128,
+    num_steps=2
+).prefetch(3)
 iterator = iter(dataset)
 
 # 체크포인트 설정
@@ -101,6 +125,7 @@ if latest_ckpt:
 # 학습 기록용 리스트들
 avg_rewards, question_counts, ckpt_log = [], [], []
 
+# 에피소드 진행 함수
 def simulate_episode_with_guess(env, policy, buffer):
     time_step = env.reset()
     total_reward = 0.0
@@ -111,30 +136,38 @@ def simulate_episode_with_guess(env, policy, buffer):
         time_step = next_time_step
         total_reward += time_step.reward
     avg_rewards.append(float(total_reward))
-    question_counts.append(len(env.asked_questions))
+    question_counts.append(len(env._envs[0].asked_questions))
 
-def automated_training(num_episodes=500, steps_per_episode=200):
+# 자동 학습 함수
+def automated_training(num_episodes=3000, steps_per_episode=100):  # 수정: 3000 에피소드
     log_rows = []
     correct = 0
     for ep in range(num_episodes):
         simulate_episode_with_guess(train_env, agent.collect_policy, replay_buffer)
-        if train_env._episode_ended and train_env.target['name'] in train_env.unique_animals:
-            guess_index = np.argmax(train_env.history)
-            guess_name = train_env.unique_animals[guess_index] if guess_index < len(train_env.unique_animals) else ""
-            if guess_name == train_env.target['name']:
+
+        if replay_buffer.num_frames() > 0:
+            for _ in range(steps_per_episode):
+                experience, _ = next(iterator)
+                agent.train(experience)
+
+        if train_py_env._episode_ended and train_py_env.target['name'] in train_py_env.unique_animals:
+            guess_index = np.argmax(train_py_env.history)
+            guess_name = train_py_env.unique_animals[guess_index] if guess_index < len(train_py_env.unique_animals) else ""
+            if guess_name == train_py_env.target['name']:
                 correct += 1
+
         total_q = question_counts[-1]
         acc = correct / (ep + 1)
         log_rows.append((ep + 1, avg_rewards[-1], total_q, acc))
 
-        for _ in range(steps_per_episode):
-            experience, _ = next(iterator)
-            agent.train(experience)
+        # 에피소드별 진행 출력
+        print(f"Episode {ep+1}: Reward={avg_rewards[-1]:.2f}, Questions={total_q}, Accuracy={acc*100:.2f}%")
 
         if (ep + 1) % 100 == 0:
             ckpt_path = checkpoint.save(os.path.join(checkpoint_dir, "ckpt"))
             ckpt_log.append((ep + 1, avg_rewards[-1], total_q, os.path.basename(ckpt_path)))
 
+    # 학습 결과 저장
     with open("ai/log/reward_log.csv", "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["episode", "reward", "question_count", "accuracy", "ckpt_file"])
@@ -143,6 +176,7 @@ def automated_training(num_episodes=500, steps_per_episode=200):
             acc = log_rows[i][3]
             writer.writerow([ep, r, q, acc, ckpt])
 
+    # 학습 과정 시각화
     plt.plot(avg_rewards, label="보상")
     plt.plot(question_counts, label="질문 수")
     plt.plot([x[3] * 100 for x in log_rows], label="정답률 (%)")
@@ -154,6 +188,7 @@ def automated_training(num_episodes=500, steps_per_episode=200):
     plt.tight_layout()
     plt.show()
 
+# 평가 함수
 def evaluate_accuracy(env, policy, test_episodes=100):
     correct, total_questions = 0, 0
     for _ in range(test_episodes):
@@ -161,9 +196,13 @@ def evaluate_accuracy(env, policy, test_episodes=100):
         while not time_step.is_last():
             action_step = policy.action(time_step)
             time_step = env.step(action_step.action)
-        total_questions += len(env.asked_questions)
+        total_questions += len(env._envs[0].asked_questions)
         if time_step.reward.numpy() >= 100.0:
             correct += 1
     acc = correct / test_episodes
     avg_q = total_questions / test_episodes
     print(f"✅ 정확도: {acc * 100:.2f}% (평균 질문 수: {avg_q:.2f})")
+
+# 실행부
+if __name__ == "__main__":
+    automated_training(num_episodes=3000, steps_per_episode=100)
