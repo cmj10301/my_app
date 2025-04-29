@@ -1,72 +1,78 @@
-# main.py
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-import numpy as np
 import tensorflow as tf
-from tensorflow.keras import models
+import numpy as np
+import uuid
 import json
-import random
+import os
+
+# 모델 로드
+model_path = "ai/models/q_network_model.h5"
+if not os.path.exists(model_path):
+    raise FileNotFoundError("q_network_model.h5 파일이 존재하지 않습니다. 먼저 학습을 완료하세요.")
+q_network_model = tf.keras.models.load_model(model_path)
+
+# 질문 텍스트 로딩
+with open("ai/dataset/final_dataset_with_family_and_size.json", encoding="utf-8") as f:
+    questions = json.load(f)["animals"][0]["questions"]
+question_texts = [q["question"] for q in questions]
+num_questions = len(question_texts)
+num_animals = len(json.load(open("ai/dataset/final_dataset_with_family_and_size.json", encoding="utf-8"))["animals"])
+total_actions = num_questions + num_animals
+
+# 세션 저장소
+session_store = {}
 
 app = FastAPI()
 
-# 모델 및 데이터 불러오기
-inference_model = models.load_model("ai/models/inference_model.h5", compile=False)
-with open("ai/dataset/final_dataset_with_family_and_size.json", encoding='utf-8') as f:
-    data = json.load(f)
-    animals = data["animals"]
-
-# 세션별 게임 상태 관리
-class GameState:
-    def __init__(self):
-        self.history = [-1] * len(animals[0]['questions'])
-        self.asked_questions = set()
-        self.done = False
-
-sessions = {}  # session_id -> GameState 매핑
-
-class UserResponse(BaseModel):
+class AnswerRequest(BaseModel):
     session_id: str
-    user_answer: int  # 0 (아니오), 1 (예)
+    answer: int  # 1: 예, 0: 아니오, -1: 모르겠음
 
 @app.post("/start")
 def start_game():
-    session_id = str(random.randint(100000, 999999))  # 간단한 세션 ID
-    sessions[session_id] = GameState()
-    return {"session_id": session_id, "message": "게임 시작!", "next_question": 0}  # 0번 질문부터 시작
+    session_id = str(uuid.uuid4().int)[:8]
+    state = [-1.0] * num_questions
+    session_store[session_id] = state
+    return {
+        "session_id": session_id,
+        "message": "게임 시작",
+        "question": question_texts[0],
+        "question_index": 0
+    }
 
 @app.post("/answer")
-def answer_question(response: UserResponse):
-    if response.session_id not in sessions:
-        raise HTTPException(status_code=404, detail="Session not found")
-    
-    state = sessions[response.session_id]
+def answer_question(req: AnswerRequest):
+    if req.session_id not in session_store:
+        raise HTTPException(status_code=404, detail="세션을 찾을 수 없습니다.")
 
-    if state.done:
-        return {"message": "게임이 이미 끝났습니다. 새로운 게임을 시작하세요."}
+    state = session_store[req.session_id]
 
-    # 현재 질문 인덱스
-    next_question = len(state.asked_questions)
-    if next_question >= len(state.history):
-        state.done = True
-        return {"message": "질문이 모두 끝났습니다. 정답을 맞춰보세요."}
+    # 이전 질문 인덱스 찾기
+    last_q_idx = next((i for i, v in enumerate(state) if v == -1), None)
+    if last_q_idx is None:
+        raise HTTPException(status_code=400, detail="질문이 모두 완료되었습니다.")
 
-    # 유저 답변 반영
-    state.history[next_question] = response.user_answer
-    state.asked_questions.add(next_question)
+    # 상태 업데이트
+    state[last_q_idx] = req.answer
+    session_store[req.session_id] = state
 
-    # 추측 시도
-    if len(state.asked_questions) >= 5:  # 최소 5개 질문 이후에만 추측
-        prediction = inference_model.predict(np.array([state.history]), verbose=0)
-        top_index = np.argmax(prediction[0])
-        predicted_animal = sorted([a["name"] for a in animals])[top_index]
+    # 추론
+    input_array = np.array([state], dtype=np.float32)
+    q_values = q_network_model.predict(input_array, verbose=0)[0]
+    next_action = int(np.argmax(q_values))
+
+    if next_action < num_questions:
         return {
-            "message": "추측합니다!",
-            "predicted_animal": predicted_animal,
-            "confidence": float(prediction[0][top_index])
+            "session_id": req.session_id,
+            "question": question_texts[next_action],
+            "question_index": next_action
         }
     else:
-        # 다음 질문 요청
+        guess_index = next_action - num_questions
         return {
-            "message": "다음 질문으로 넘어갑니다.",
-            "next_question": next_question + 1  # 다음 질문 번호
+            "session_id": req.session_id,
+            "guess": True,
+            "guess_index": guess_index,
+            "guess_name": f"{guess_index}번 동물 (이름 매핑은 프론트에서 처리 가능)"
         }

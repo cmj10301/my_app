@@ -1,3 +1,7 @@
+# c:/Users/user_me/Documents/my_app/ai/models/model2.py
+
+# tensorboard --logdir=ai/logs/tensorboard --port=6006
+
 import os
 import random
 import numpy as np
@@ -5,7 +9,6 @@ import tensorflow as tf
 import json
 import matplotlib.pyplot as plt
 import csv
-import pandas as pd
 from tf_agents.environments import py_environment, tf_py_environment
 from tf_agents.specs import array_spec
 from tf_agents.trajectories import time_step as ts
@@ -14,18 +17,15 @@ from tf_agents.agents.dqn import dqn_agent
 from tf_agents.utils import common
 from tf_agents.replay_buffers import tf_uniform_replay_buffer
 from tf_agents.trajectories import trajectory
-from tensorflow.keras import layers, models
 from tensorflow.summary import create_file_writer
 
-# 모델 및 데이터 로딩
-inference_model = models.load_model("ai/models/inference_model.h5", compile=False)
+# 데이터 로드
 with open("ai/dataset/final_dataset_with_family_and_size.json", encoding='utf-8') as f:
     data = json.load(f)
     animals = data["animals"]
 
-# 환경 정의
 class TwentyQuestionsTFEnv(py_environment.PyEnvironment):
-    def __init__(self, dataset, noise_rate=0.05):
+    def __init__(self, dataset, noise_rate=0.0):
         self.dataset = dataset
         self.noise_rate = noise_rate
         self.num_questions = len(dataset[0]['questions'])
@@ -55,21 +55,25 @@ class TwentyQuestionsTFEnv(py_environment.PyEnvironment):
         if action < self.num_questions:
             if action in self.asked_questions and train_step_counter.numpy() < 10000:
                 return ts.transition(np.array(self.history, dtype=np.float32), reward=-1.0, discount=1.0)
+
             self.asked_questions.add(action)
             answer = self.target['questions'][action]['answer']
-            question_penalty = -1.0
+            if random.random() < self.noise_rate:
+                answer = 1 - answer
             self.history[action] = answer
-            return ts.transition(np.array(self.history, dtype=np.float32), reward=question_penalty, discount=1.0)
+            return ts.transition(np.array(self.history, dtype=np.float32), reward=-1.0, discount=1.0)
+
         else:
             if len(self.asked_questions) < 5:
                 return ts.transition(np.array(self.history, dtype=np.float32), reward=-10.0, discount=1.0)
+
             guess_index = action - self.num_questions
             guess_name = self.unique_animals[guess_index]
             self._episode_ended = True
             reward = 100.0 if guess_name == self.target['name'] else -50.0
             return ts.termination(np.array(self.history, dtype=np.float32), reward=reward)
 
-# 에이전트 구성
+# 환경 설정
 train_py_env = TwentyQuestionsTFEnv(animals)
 train_env = tf_py_environment.TFPyEnvironment(train_py_env)
 
@@ -86,7 +90,7 @@ epsilon = tf.Variable(1.0)
 
 def decay_epsilon():
     step = train_step_counter.numpy()
-    epsilon_value = np.interp(step, [0, 5000], [1.0, 0.1])
+    epsilon_value = np.interp(step, [0, 3000], [1.0, 0.1])
     epsilon.assign(epsilon_value)
 
 def get_epsilon():
@@ -111,15 +115,7 @@ replay_buffer = tf_uniform_replay_buffer.TFUniformReplayBuffer(
 )
 
 gpus = tf.config.list_physical_devices('GPU')
-if gpus:
-    gpu_info = tf.config.experimental.get_device_details(gpus[0])
-    gpu_name = gpu_info.get('device_name', 'Unknown GPU')
-    if "4060" in gpu_name:
-        sample_batch_size = 256
-    else:
-        sample_batch_size = 128
-else:
-    sample_batch_size = 64
+sample_batch_size = 256 if gpus else 64
 
 dataset = replay_buffer.as_dataset(
     sample_batch_size=sample_batch_size,
@@ -154,8 +150,7 @@ def save_best_model(avg_reward, accuracy, episode):
     score = avg_reward + (accuracy * 100)
     if score > best_score:
         best_score = score
-        best_ckpt_path = os.path.join(best_checkpoint_dir, "best_ckpt")
-        checkpoint.write(best_ckpt_path)
+        checkpoint.write(os.path.join(best_checkpoint_dir, "best_ckpt"))
         with open("ai/log/best_model_log.txt", "w", encoding="utf-8") as f:
             f.write(f"에피소드: {episode}\n스코어: {score:.2f}\n정확도: {accuracy:.4f}\n보상: {avg_reward:.2f}\n")
         print(f"🌟 베스트 모델 저장! (에피소드 {episode}, 스코어: {score:.2f})")
@@ -174,7 +169,7 @@ def simulate_episode_with_guess(env, policy, buffer):
     avg_rewards.append(float(total_reward))
     question_counts.append(len(env._envs[0].asked_questions))
 
-def automated_training(num_episodes=15000, steps_per_episode=300):
+def automated_training(num_episodes, steps_per_episode):
     log_rows = []
     correct = 0
     for ep in range(num_episodes):
@@ -195,9 +190,9 @@ def automated_training(num_episodes=15000, steps_per_episode=300):
         acc = correct / (ep + 1)
         log_rows.append((ep + 1, avg_rewards[-1], total_q, acc))
 
-        if (ep + 1) % 500 == 0:
-            avg_r = np.mean(avg_rewards[-500:])
-            avg_q = np.mean(question_counts[-500:])
+        if (ep + 1) % 1000 == 0:
+            avg_r = np.mean(avg_rewards[-1000:])
+            avg_q = np.mean(question_counts[-1000:])
             acc_recent = correct / (ep + 1)
 
             print(f"[에피소드 {ep+1}] 최근 평균 보상: {avg_r:.2f}, 최근 평균 질문 수: {avg_q:.2f}, 정확도: {acc_recent*100:.2f}%")
@@ -206,7 +201,6 @@ def automated_training(num_episodes=15000, steps_per_episode=300):
             ckpt_log.append((ep + 1, avg_rewards[-1], total_q, os.path.basename(ckpt_path)))
             save_best_model(avg_r, acc_recent, ep + 1)
 
-            # TensorBoard 기록
             with summary_writer.as_default():
                 tf.summary.scalar('Reward', avg_r, step=ep+1)
                 tf.summary.scalar('Question Count', avg_q, step=ep+1)
@@ -232,22 +226,9 @@ def automated_training(num_episodes=15000, steps_per_episode=300):
     plt.grid(True)
     plt.tight_layout()
     plt.show()
-    q_net.model.save('ai/models/q_network_model.h5')
+
+    q_net._network.save('ai/models/q_network_model.h5')
     print("✅ 학습 완료! Q-Network 모델 저장되었습니다.")
 
-def evaluate_accuracy(env, policy, test_episodes=100):
-    correct, total_questions = 0, 0
-    for _ in range(test_episodes):
-        time_step = env.reset()
-        while not time_step.is_last():
-            action_step = policy.action(time_step)
-            time_step = env.step(action_step.action)
-        total_questions += len(env._envs[0].asked_questions)
-        if time_step.reward.numpy() >= 100.0:
-            correct += 1
-    acc = correct / test_episodes
-    avg_q = total_questions / test_episodes
-    print(f"✅ 정확도: {acc * 100:.2f}% (평균 질문 수: {avg_q:.2f})")
-
 if __name__ == "__main__":
-    automated_training(num_episodes=15000, steps_per_episode=300)
+    automated_training(num_episodes=100, steps_per_episode=50)

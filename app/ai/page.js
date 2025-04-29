@@ -1,58 +1,59 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import axios from 'axios'
+import { useState } from "react";
+import axios from "axios";
 
-const questions = [
-  "날 수 있나요?", "물을 좋아하나요?", "네 발로 걷나요?", "전기를 사용할 수 있나요?", "초식동물인가요?",
-  "야행성인가요?", "사막에서 살 수 있나요?", "독이 있나요?", "인간보다 똑똑한가요?", "알을 낳나요?",
-  "털이 있나요?", "차가운 곳에서도 살 수 있나요?", "집에서 키우기 적합한가요?", "바퀴가 있나요?",
-  "이동할 수 있나요?", "식물을 먹나요?", "소리를 낼 수 있나요?", "크기가 사람보다 큰가요?",
-  "두뇌가 있나요?", "위험한가요?"
-]
+export default function GamePage() {
+  const [sessionId, setSessionId] = useState<string>("");
+  const [question, setQuestion] = useState<string>("게임을 시작해주세요!");
+  const [guess, setGuess] = useState<string>("");
 
-export default function Home() {
-  const [answers, setAnswers] = useState([])
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [result, setResult] = useState("")
+  const startGame = async () => {
+    const res = await axios.post("http://localhost:8000/start");
+    setSessionId(res.data.session_id);
+    setQuestion(res.data.question);
+    setGuess("");
+  };
 
-  const handleAnswer = async (value) => {
-    const updated = [...answers, value]
-    setAnswers(updated)
-
-    try {
-      const res = await axios.post('http://localhost:8000/predict', {
-        answers: updated
-      })
-
-      if (res.data.result) {
-        setResult(res.data.result)
-      } else if (currentIndex + 1 < questions.length) {
-        setCurrentIndex(currentIndex + 1)
-      } else {
-        setResult("정확한 예측이 어려워요 😢")
-      }
-    } catch (err) {
-      setResult("서버 오류 😢")
+  const sendAnswer = async (answer) => {
+    if (!sessionId) {
+      alert("게임을 먼저 시작하세요!");
+      return;
     }
-  }
+    const res = await axios.post("http://localhost:8000/answer", {
+      session_id: sessionId,
+      answer: answer,
+    });
+
+    if (res.data.guess) {
+      setGuess(`정답 추측: ${res.data.guess_name}`);
+      setQuestion("게임 종료!");
+    } else {
+      setQuestion(res.data.question);
+    }
+  };
 
   return (
-    <div style={{ padding: "2rem", fontFamily: "sans-serif" }}>
-      <h1>스무고개 AI</h1>
-
-      {result ? (
-        <h2>당신이 생각한 건... <b>{result}</b>인가요?</h2>
-      ) : (
-        <>
-          <p><b>Q{currentIndex + 1}.</b> {questions[currentIndex]}</p>
-          <div style={{ display: "flex", gap: "1rem" }}>
-            <button onClick={() => handleAnswer(0)}>예</button>
-            <button onClick={() => handleAnswer(1)}>아니요</button>
-            <button onClick={() => handleAnswer(2)}>모르겠음</button>
-          </div>
-        </>
+    <div className="flex flex-col items-center justify-center min-h-screen gap-4 p-4">
+      <h1 className="text-2xl font-bold">스무고개 AI 게임</h1>
+      <button onClick={startGame} className="bg-blue-500 text-white px-4 py-2 rounded">
+        게임 시작
+      </button>
+      <div className="text-lg mt-6">{question}</div>
+      <div className="flex gap-4 mt-4">
+        <button onClick={() => sendAnswer(1)} className="bg-green-500 text-white px-4 py-2 rounded">
+          예
+        </button>
+        <button onClick={() => sendAnswer(0)} className="bg-red-500 text-white px-4 py-2 rounded">
+          아니오
+        </button>
+        <button onClick={() => sendAnswer(-1)} className="bg-gray-500 text-white px-4 py-2 rounded">
+          모르겠습니다
+        </button>
+      </div>
+      {guess && (
+        <div className="mt-6 text-lg font-semibold">{guess}</div>
       )}
     </div>
-  )
+  );
 }
