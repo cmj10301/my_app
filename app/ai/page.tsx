@@ -12,81 +12,146 @@ export default function TwentyQuestions() {
   const [step, setStep] = useState<Step>();
   const [history, setHistory] = useState<string[]>([]);
 
+  /* ---------- helpers ---------- */
   const start = async () => {
-    const res = await axios.post("http://localhost:8000/start");
-    setSessionId(res.data.session_id);
-    setStep({ type: "question", text: res.data.question, index: res.data.question_index });
+    const { data } = await axios.post("http://localhost:8000/start");
+    setSessionId(data.session_id);
+    setStep({ type: "question", text: data.question, index: data.question_index });
     setHistory([]);
   };
 
   const sendAnswer = async (ans: 1 | 0 | -1) => {
     if (!sessionId || !step || step.type !== "question") return;
 
-    const res = await axios.post("http://localhost:8000/answer", {
+    const { data } = await axios.post("http://localhost:8000/answer", {
       session_id: sessionId,
       answer: ans,
     });
 
-    // 기록
-    setHistory((h) => [...h, `${step.text} → ${ans === 1 ? "예" : ans === 0 ? "아니오" : "모르겠습니다"}`]);
+    setHistory((h) => [
+      ...h,
+      `${step.text} → ${ans === 1 ? "예" : ans === 0 ? "아니오" : "모르겠습니다"}`,
+    ]);
 
-    if (res.data.guess) {
-      setStep({ type: "guess", name: res.data.guess_name });
+    if (data.guess) {
+      setStep({ type: "guess", name: data.guess_name });
     } else {
-      setStep({ type: "question", text: res.data.question, index: res.data.question_index });
+      setStep({ type: "question", text: data.question, index: data.question_index });
     }
   };
 
+  /* ---------- UI ---------- */
   return (
-    <main className="flex flex-col items-center gap-4 p-8">
-      <h1 className="text-3xl font-bold">20 Questions – 동물 맞히기</h1>
-
+    <main className="container-sm py-5">
+      {/* --- 타이틀 / Hero --- */}
       {!step && (
-        <button className="px-6 py-3 rounded-lg shadow" onClick={start}>
-          게임 시작
-        </button>
+        <section className="p-5 mb-4 bg-light rounded-3 text-center shadow-sm">
+          <h1 className="display-5 fw-bold mb-3">
+            <i className="bi bi-patch-question-fill me-2" />
+            스무 고개로 동물 맞히기
+          </h1>
+          <p className="lead">
+            예/아니오 질문에 답해&nbsp;보세요. 제가&nbsp;20 번 안에 여러분이
+            생각한 동물을 맞혀볼게요!
+          </p>
+          <button className="btn btn-primary btn-lg px-5 mt-3" onClick={start}>
+            게임 시작
+          </button>
+        </section>
       )}
 
-      {step?.type === "question" && (
-        <div className="space-y-4 text-center">
-          <p className="text-xl">{step.text}</p>
-          <div className="flex gap-2 justify-center">
-            <button onClick={() => sendAnswer(1)} className="btn">
-              예
-            </button>
-            <button onClick={() => sendAnswer(0)} className="btn">
-              아니오
-            </button>
-            <button onClick={() => sendAnswer(-1)} className="btn">
-              모르겠음
-            </button>
+      {/* --- 본 게임 카드 --- */}
+      {step && (
+        <div className="card mx-auto shadow" style={{ maxWidth: 540 }}>
+          <div className="card-body text-center">
+            {/* 진행 바 */}
+            <div className="progress mb-4" style={{ height: 6 }}>
+              <div
+                className="progress-bar bg-success"
+                role="progressbar"
+                style={{ width: `${(history.length / 20) * 100}%` }} // 20회는 UX 표준치
+                aria-valuenow={history.length}
+                aria-valuemin={0}
+                aria-valuemax={20}
+              />
+            </div>
+
+            {/* 1) 질문 단계 */}
+            {step.type === "question" && (
+              <>
+                <h2 className="h4 mb-4">{step.text}</h2>
+                <div className="d-flex justify-content-center gap-2">
+                  <button className="btn btn-success px-4" onClick={() => sendAnswer(1)}>
+                    <i className="bi bi-check-circle me-1" />
+                    예
+                  </button>
+                  <button className="btn btn-danger px-4" onClick={() => sendAnswer(0)}>
+                    <i className="bi bi-x-circle me-1" />
+                    아니오
+                  </button>
+                  <button
+                    className="btn btn-secondary px-4"
+                    onClick={() => sendAnswer(-1)}
+                  >
+                    <i className="bi bi-question-circle me-1" />
+                    모르겠음
+                  </button>
+                </div>
+              </>
+            )}
+
+            {/* 2) 추리 단계 */}
+            {step.type === "guess" && (
+              <>
+                <h2 className="h4 mb-3">
+                  <i className="bi bi-stars me-1 text-warning" />
+                  제가 생각한 동물은…
+                </h2>
+                <p className="display-6 fw-semibold mb-4">{step.name}</p>
+                <button className="btn btn-outline-primary" onClick={start}>
+                  <i className="bi bi-arrow-repeat me-1" />
+                  다시 하기
+                </button>
+              </>
+            )}
           </div>
         </div>
       )}
 
-      {step?.type === "guess" && (
-        <div className="space-y-4 text-center">
-          <p className="text-2xl font-semibold">제가 생각한 동물은 …</p>
-          <p className="text-4xl">{step.name}</p>
-          <button onClick={start} className="btn">
-            다시 하기
-          </button>
-        </div>
-      )}
-
+      {/* --- 질문/답 기록(Accordion) --- */}
       {history.length > 0 && (
-        <div className="w-full max-w-md mt-6">
-          <h2 className="font-medium mb-2">질문 / 답 기록</h2>
-          <ul className="list-disc pl-5 text-sm space-y-1">
-            {history.map((h, i) => (
-              <li key={i}>{h}</li>
-            ))}
-          </ul>
+        <div className="accordion mx-auto mt-4" style={{ maxWidth: 540 }} id="historyAcc">
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="histHeading">
+              <button
+                className="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#histCollapse"
+                aria-expanded="false"
+                aria-controls="histCollapse"
+              >
+                <i className="bi bi-journal-text me-2" />
+                질문 / 답 기록 ({history.length})
+              </button>
+            </h2>
+            <div
+              id="histCollapse"
+              className="accordion-collapse collapse"
+              aria-labelledby="histHeading"
+              data-bs-parent="#historyAcc"
+            >
+              <ul className="list-group list-group-flush small">
+                {history.map((h, i) => (
+                  <li className="list-group-item" key={i}>
+                    {h}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       )}
     </main>
   );
 }
-
-/* tailwind btn */
-const btn = "px-4 py-2 rounded-lg border shadow";
