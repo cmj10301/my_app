@@ -5,7 +5,7 @@ import tensorflow as tf
 import json
 import matplotlib.pyplot as plt
 import csv
-
+import pandas as pd
 from tf_agents.environments import py_environment, tf_py_environment
 from tf_agents.specs import array_spec
 from tf_agents.trajectories import time_step as ts
@@ -15,6 +15,7 @@ from tf_agents.utils import common
 from tf_agents.replay_buffers import tf_uniform_replay_buffer
 from tf_agents.trajectories import trajectory
 from tensorflow.keras import layers, models
+from tensorflow.summary import create_file_writer
 
 # 모델 및 데이터 로딩
 inference_model = models.load_model("ai/models/inference_model.h5", compile=False)
@@ -54,37 +55,28 @@ class TwentyQuestionsTFEnv(py_environment.PyEnvironment):
         if action < self.num_questions:
             if action in self.asked_questions and train_step_counter.numpy() < 10000:
                 return ts.transition(np.array(self.history, dtype=np.float32), reward=-1.0, discount=1.0)
-
             self.asked_questions.add(action)
             answer = self.target['questions'][action]['answer']
-
-            # ✨ 수정된 부분: 질문 1개당 -1.0 페널티 부여
             question_penalty = -1.0
             self.history[action] = answer
             return ts.transition(np.array(self.history, dtype=np.float32), reward=question_penalty, discount=1.0)
-
         else:
             if len(self.asked_questions) < 5:
                 return ts.transition(np.array(self.history, dtype=np.float32), reward=-10.0, discount=1.0)
-
             guess_index = action - self.num_questions
             guess_name = self.unique_animals[guess_index]
             self._episode_ended = True
             reward = 100.0 if guess_name == self.target['name'] else -50.0
             return ts.termination(np.array(self.history, dtype=np.float32), reward=reward)
 
-
 # 에이전트 구성
 train_py_env = TwentyQuestionsTFEnv(animals)
 train_env = tf_py_environment.TFPyEnvironment(train_py_env)
 
 fc_layer_params = (64,)
-
 q_net = q_network.QNetwork(
     train_env.observation_spec(),
     train_env.action_spec(),
-    preprocessing_layers=None,
-    preprocessing_combiner=None,
     fc_layer_params=fc_layer_params
 )
 
@@ -92,7 +84,6 @@ optimizer = tf.keras.optimizers.Adam(learning_rate=1e-3)
 train_step_counter = tf.Variable(0)
 epsilon = tf.Variable(1.0)
 
-# epsilon 0~5000 스텝 동안 감소
 def decay_epsilon():
     step = train_step_counter.numpy()
     epsilon_value = np.interp(step, [0, 5000], [1.0, 0.1])
@@ -136,18 +127,41 @@ dataset = replay_buffer.as_dataset(
 ).prefetch(3)
 iterator = iter(dataset)
 
-# 체크포인트 설정
 checkpoint_dir = "ai/checkpoints"
+best_checkpoint_dir = "ai/best_checkpoint"
+log_dir = "ai/log"
+tensorboard_log_dir = "ai/logs/tensorboard"
+
 os.makedirs(checkpoint_dir, exist_ok=True)
+os.makedirs(best_checkpoint_dir, exist_ok=True)
+os.makedirs(log_dir, exist_ok=True)
+os.makedirs(tensorboard_log_dir, exist_ok=True)
+
 checkpoint = tf.train.Checkpoint(agent=agent, optimizer=optimizer, train_step_counter=train_step_counter)
 latest_ckpt = tf.train.latest_checkpoint(checkpoint_dir)
+
 if latest_ckpt:
     checkpoint.restore(latest_ckpt)
+    print(f"✅ 체크포인트 {latest_ckpt} 로드 완료 (현재 스텝: {train_step_counter.numpy()})")
+else:
+    print("❗ 체크포인트가 없습니다. 새로운 학습을 시작합니다.")
 
-# 기록용 리스트
+summary_writer = create_file_writer(tensorboard_log_dir)
+best_score = -np.inf
+
+def save_best_model(avg_reward, accuracy, episode):
+    global best_score
+    score = avg_reward + (accuracy * 100)
+    if score > best_score:
+        best_score = score
+        best_ckpt_path = os.path.join(best_checkpoint_dir, "best_ckpt")
+        checkpoint.write(best_ckpt_path)
+        with open("ai/log/best_model_log.txt", "w", encoding="utf-8") as f:
+            f.write(f"에피소드: {episode}\n스코어: {score:.2f}\n정확도: {accuracy:.4f}\n보상: {avg_reward:.2f}\n")
+        print(f"🌟 베스트 모델 저장! (에피소드 {episode}, 스코어: {score:.2f})")
+
 avg_rewards, question_counts, ckpt_log = [], [], []
 
-# 에피소드 진행
 def simulate_episode_with_guess(env, policy, buffer):
     time_step = env.reset()
     total_reward = 0.0
@@ -160,7 +174,6 @@ def simulate_episode_with_guess(env, policy, buffer):
     avg_rewards.append(float(total_reward))
     question_counts.append(len(env._envs[0].asked_questions))
 
-# 학습 함수
 def automated_training(num_episodes=15000, steps_per_episode=300):
     log_rows = []
     correct = 0
@@ -183,11 +196,23 @@ def automated_training(num_episodes=15000, steps_per_episode=300):
         log_rows.append((ep + 1, avg_rewards[-1], total_q, acc))
 
         if (ep + 1) % 500 == 0:
-            print(f"[에피소드 {ep+1}] 최근 평균 보상: {np.mean(avg_rewards[-500:]):.2f}, 최근 평균 질문 수: {np.mean(question_counts[-500:]):.2f}, 정확도: {acc*100:.2f}%")
+            avg_r = np.mean(avg_rewards[-500:])
+            avg_q = np.mean(question_counts[-500:])
+            acc_recent = correct / (ep + 1)
 
-        if (ep + 1) % 500 == 0:
+            print(f"[에피소드 {ep+1}] 최근 평균 보상: {avg_r:.2f}, 최근 평균 질문 수: {avg_q:.2f}, 정확도: {acc_recent*100:.2f}%")
+
             ckpt_path = checkpoint.save(os.path.join(checkpoint_dir, "ckpt"))
             ckpt_log.append((ep + 1, avg_rewards[-1], total_q, os.path.basename(ckpt_path)))
+            save_best_model(avg_r, acc_recent, ep + 1)
+
+            # TensorBoard 기록
+            with summary_writer.as_default():
+                tf.summary.scalar('Reward', avg_r, step=ep+1)
+                tf.summary.scalar('Question Count', avg_q, step=ep+1)
+                tf.summary.scalar('Accuracy', acc_recent * 100, step=ep+1)
+
+    summary_writer.flush()
 
     with open("ai/log/reward_log.csv", "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
@@ -210,7 +235,6 @@ def automated_training(num_episodes=15000, steps_per_episode=300):
     q_net.model.save('ai/models/q_network_model.h5')
     print("✅ 학습 완료! Q-Network 모델 저장되었습니다.")
 
-# 평가 함수
 def evaluate_accuracy(env, policy, test_episodes=100):
     correct, total_questions = 0, 0
     for _ in range(test_episodes):
